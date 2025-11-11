@@ -1,0 +1,155 @@
+# //  Questa Sim-64
+# //  Version 2024.1 win64 Feb  1 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+do run.do
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 15:52:23 on Nov 11,2025
+# vlog -reportprogress 300 list.svh "+incdir+C:/uvm-1.2/src" "+define+ETH_WISHBONE_B3" 
+# -- Compiling package uvm_pkg
+# -- Compiling package list_svh_unit
+# -- Importing package uvm_pkg
+# -- Compiling module eth_clockgen
+# -- Compiling module eth_cop
+# -- Compiling module eth_crc
+# -- Compiling module eth_fifo
+# -- Compiling module eth_maccontrol
+# -- Compiling module eth_macstatus
+# -- Compiling module eth_miim
+# -- Compiling module eth_outputcontrol
+# -- Compiling module eth_random
+# -- Compiling module eth_receivecontrol
+# -- Compiling module eth_register
+# -- Compiling module eth_registers
+# -- Compiling module eth_rxaddrcheck
+# -- Compiling module eth_rxcounters
+# -- Compiling module eth_rxethmac
+# -- Compiling module eth_rxstatem
+# -- Compiling module eth_shiftreg
+# -- Compiling module eth_spram_256x32
+# -- Compiling module eth_top
+# -- Compiling module eth_transmitcontrol
+# -- Compiling module eth_txcounters
+# -- Compiling module eth_txethmac
+# -- Compiling module eth_txstatem
+# -- Compiling module eth_wishbone
+# -- Compiling module ethmac
+# -- Compiling interface proc_intf
+# -- Compiling interface mem_intf
+# -- Compiling interface tx_intf
+# -- Compiling interface rx_intf
+# -- Compiling interface miim_intf
+# -- Compiling module top
+# 
+# Top level modules:
+# 	eth_cop
+# 	eth_top
+# 	top
+# End time: 15:52:25 on Nov 11,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# vsim top -sv_lib C:/questasim64_2024.1/uvm-1.2/win64/uvm_dpi 
+# Start time: 15:52:26 on Nov 11,2025
+# Loading C:/Users/arpit/AppData/Local/Temp\arpit@JEDI_dpi_35836\win64_cl-19.44.35217\export_tramp.dll
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Loading sv_std.std
+# Loading work.proc_intf(fast)
+# Loading work.mem_intf(fast)
+# Loading work.rx_intf(fast)
+# Loading work.tx_intf(fast)
+# Loading work.miim_intf(fast)
+# Loading work.uvm_pkg(fast)
+# Loading work.list_svh_unit(fast)
+# Loading work.top(fast)
+# Compiling C:/Users/arpit/AppData/Local/Temp\arpit@JEDI_dpi_35836\win64_cl-19.44.35217\exportwrapper.c
+# Loading C:/Users/arpit/AppData/Local/Temp\arpit@JEDI_dpi_35836\win64_cl-19.44.35217\vsim_auto_compile.dll
+# Loading C:/questasim64_2024.1/uvm-1.2/win64/uvm_dpi.dll
+# UVM_INFO C:/uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
+# ----------------------------------------------------------------
+# UVM-1.2
+# (C) 2007-2014 Mentor Graphics Corporation
+# (C) 2007-2014 Cadence Design Systems, Inc.
+# (C) 2006-2014 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# (C) 2013-2014 NVIDIA Corporation
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO @ 0: reporter [RNTST] Running test mac_fd_rx_test...
+# UVM_INFO C:/uvm-1.2/src/base/uvm_root.svh(579) @ 0: reporter [UVMTOP] UVM testbench topology:
+# --------------------------------------------------------------
+# Name                       Type                    Size  Value
+# --------------------------------------------------------------
+# uvm_test_top               mac_fd_rx_test          -     @355 
+#   env                      mac_env                 -     @368 
+#     mem_agent_i            mem_agent               -     @413 
+#       mem_model_i          mem_model               -     @422 
+#     miim_agent_i           miim_agent              -     @404 
+#     proc_agent_i           proc_agent              -     @377 
+#       drv                  proc_drv                -     @433 
+#         rsp_port           uvm_analysis_port       -     @452 
+#         seq_item_port      uvm_seq_item_pull_port  -     @442 
+#       sqr                  uvm_sequencer           -     @462 
+#         rsp_export         uvm_analysis_export     -     @471 
+#         seq_item_export    uvm_seq_item_pull_imp   -     @589 
+#         arbitration_queue  array                   0     -    
+#         lock_queue         array                   0     -    
+#         num_last_reqs      integral                32    'd1  
+#         num_last_rsps      integral                32    'd1  
+#     rx_agent_i             rx_agent                -     @395 
+#       drv                  rx_drv                  -     @605 
+#         rsp_port           uvm_analysis_port       -     @624 
+#         seq_item_port      uvm_seq_item_pull_port  -     @614 
+#       sqr                  uvm_sequencer           -     @634 
+#         rsp_export         uvm_analysis_export     -     @643 
+#         seq_item_export    uvm_seq_item_pull_imp   -     @761 
+#         arbitration_queue  array                   0     -    
+#         lock_queue         array                   0     -    
+#         num_last_reqs      integral                32    'd1  
+#         num_last_rsps      integral                32    'd1  
+#     tx_agent_i             tx_agent                -     @386 
+# --------------------------------------------------------------
+# 
+# int_src value=1000
+# UVM_INFO C:/uvm-1.2/src/base/uvm_objection.svh(1270) @ 6755: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO C:/uvm-1.2/src/base/uvm_report_server.svh(847) @ 6755: reporter [UVM/REPORT/SERVER] 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    4
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [RNTST]     1
+# [TEST_DONE]     1
+# [UVM/RELNOTES]     1
+# [UVMTOP]     1
+# 
+# ** Note: $finish    : C:/uvm-1.2/src/base/uvm_root.svh(517)
+#    Time: 6755 ns  Iteration: 67  Instance: /top
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at C:/uvm-1.2/src/base/uvm_root.svh line 517
