@@ -1,12 +1,14 @@
 class rx_agent extends uvm_agent;
 	rx_drv drv;
 	rx_sqr sqr;
+	rx_mon mon;
 	`uvm_component_utils(rx_agent)
 	`NEW_COMP
 
 	function void build_phase(uvm_phase phase);
 		drv = rx_drv::type_id::create("drv", this);
 		sqr = rx_sqr::type_id::create("sqr", this);
+		mon = rx_mon::type_id::create("mon", this);
 	endfunction
 
 	function void connect_phase(uvm_phase phase);

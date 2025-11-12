@@ -9,6 +9,8 @@
 	endfunction
 
 bit [31:0] reg_maskA[20:0];
+int num_matches;
+int num_mismatches;
 
 `define MODER    12'h0
 `define INT_SRC  12'h1

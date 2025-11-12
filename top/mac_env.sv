@@ -4,7 +4,7 @@ class mac_env extends uvm_env;
 	tx_agent tx_agent_i;
 	rx_agent rx_agent_i;
 	miim_agent	miim_agent_i;
-	//mac_sbd		mac_sbd_i;
+	mac_sbd		mac_sbd_i;
 
 	`uvm_component_utils(mac_env)
 	`NEW_COMP
@@ -15,6 +15,12 @@ class mac_env extends uvm_env;
 		rx_agent_i = rx_agent::type_id::create("rx_agent_i", this);
 		miim_agent_i = miim_agent::type_id::create("miim_agent_i", this);
 		mem_agent_i = mem_agent::type_id::create("mem_agent_i", this);
-		//sbd_agent sbd_agent_i = sbd_agent::type_id::create("sbd_agent_i", this);
+		mac_sbd_i =  mac_sbd::type_id::create("mac_sbd_i", this);
+	endfunction
+
+	function void connect();
+		mem_agent_i.mon.ap_port.connect(mac_sbd_i.imp_mem);
+		tx_agent_i.mon.ap_port.connect(mac_sbd_i.imp_tx);
+		rx_agent_i.mon.ap_port.connect(mac_sbd_i.imp_rx);
 	endfunction
 endclass

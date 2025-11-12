@@ -44,7 +44,7 @@ class mac_fd_tx_seq extends proc_base_seq;
 		`uvm_do_with(req, {req.addr == 12'h101; req.data == data_t; req.wr_rd == 1'b1; })
 		
 		//Load length and control info of the Tx DMA descriptors
-		data_t = {16'h80, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 11'b0};
+		data_t = {`FRAME_LENGTH, 1'b1, 1'b1, 1'b1, 1'b1, 1'b1, 11'b0};
 		`uvm_do_with(req, {req.addr == 12'h100; req.data == data_t; req.wr_rd == 1'b1; })
 
 		//INT_MASK: enable all interrupt generation

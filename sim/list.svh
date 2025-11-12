@@ -18,17 +18,23 @@ import uvm_pkg::*;
 `include "../proc/proc_agent.sv"
 
 `include "../mem/mem_model.sv"
+`include "../mem/mem_mon.sv"
 `include "../mem/mem_agent.sv"
 
+`include "../rx_phy/eth_frame.sv"
+
+`include "../tx_phy/tx_mon.sv"
 `include "../tx_phy/tx_phy_agent.sv"
 
-`include "../rx_phy/eth_frame.sv"
 `include "../rx_phy/rx_seq_lib.sv"
 `include "../rx_phy/rx_sqr.sv"
 `include "../rx_phy/rx_drv.sv"
+`include "../rx_phy/rx_mon.sv"
 `include "../rx_phy/rx_phy_agent.sv"
 
 `include "../miim/miim_agent.sv"
+
+`include "../sbd/mac_sbd.sv"
 
 `include "../top/mac_env.sv"
 `include "../top/test_lib.sv"
