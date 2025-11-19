@@ -1,18 +1,4 @@
-BEGIN 3:mem_intf:fast__2:work
-    m_wb_dat_i :  1:top:fast:work
-    m_wb_stb_o :  1:top:fast:work
-    m_wb_err_i :  1:top:fast:work
-    m_wb_sel_o :  1:top:fast:work
-    m_wb_bte_o :  1:top:fast:work
-    m_wb_dat_o :  1:top:fast:work
-    m_wb_cyc_o :  1:top:fast:work
-    m_wb_ack_i :  1:top:fast:work
-    m_wb_adr_o :  1:top:fast:work
-    m_wb_cti_o :  1:top:fast:work
-    m_wb_we_o :  1:top:fast:work
-END 
 BEGIN 3:mem_intf:fast__1:work
-    m_wb_adr_o :  1:list_svh_unit:fast:work
     m_wb_cyc_o :  1:list_svh_unit:fast:work
     m_wb_sel_o :  1:list_svh_unit:fast:work
     m_wb_we_o :  1:list_svh_unit:fast:work
@@ -21,48 +7,60 @@ BEGIN 3:mem_intf:fast__1:work
     wb_clk_i :  1:list_svh_unit:fast:work
     m_wb_ack_i :  1:list_svh_unit:fast:work
     m_wb_dat_i :  1:list_svh_unit:fast:work
+    m_wb_adr_o :  1:list_svh_unit:fast:work
 END 
 BEGIN 3:rx_intf:fast__1:work
-    mrxdv_pad_i :  1:list_svh_unit:fast:work
-    mrx_clk_pad_i :  1:list_svh_unit:fast:work
     mrxd_pad_i :  1:list_svh_unit:fast:work
 END 
+BEGIN 3:miim_intf:fast__1:work
+    md_pad_i :  1:top:fast:work
+    md_padoe_o :  1:top:fast:work
+    mdc_pad_o :  1:top:fast:work
+    md_pad_o :  1:top:fast:work
+END 
 BEGIN 3:tx_intf:fast__2:work
-    mtxen_pad_o :  1:top:fast:work
     mtxerr_pad_o :  1:top:fast:work
     mtxd_pad_o :  1:top:fast:work
     mtx_clk_pad_i :  1:top:fast:work
+    mtxen_pad_o :  1:top:fast:work
 END 
-BEGIN 3:miim_intf:fast__1:work
-    mdc_pad_o :  1:top:fast:work
-    md_pad_o :  1:top:fast:work
-    md_pad_i :  1:top:fast:work
-    md_padoe_o :  1:top:fast:work
+BEGIN 3:mem_intf:fast__2:work
+    m_wb_ack_i :  1:top:fast:work
+    m_wb_adr_o :  1:top:fast:work
+    m_wb_cti_o :  1:top:fast:work
+    m_wb_we_o :  1:top:fast:work
+    m_wb_dat_i :  1:top:fast:work
+    m_wb_stb_o :  1:top:fast:work
+    m_wb_err_i :  1:top:fast:work
+    m_wb_sel_o :  1:top:fast:work
+    m_wb_bte_o :  1:top:fast:work
+    m_wb_dat_o :  1:top:fast:work
+    m_wb_cyc_o :  1:top:fast:work
+END 
+BEGIN 3:proc_intf:fast__2:work
+    wb_ack_o :  1:top:fast:work
+    wb_dat_i :  1:top:fast:work
+    wb_rst_i :  1:top:fast:work
+    wb_clk_i :  1:top:fast:work
+    wb_cyc_i :  1:top:fast:work
+    wb_stb_i :  1:top:fast:work
+    wb_err_o :  1:top:fast:work
+    wb_dat_o :  1:top:fast:work
+    wb_sel_i :  1:top:fast:work
+    wb_we_i :  1:top:fast:work
+    int_o :  1:top:fast:work 1:list_svh_unit:fast:work
+    wb_adr_i :  1:top:fast:work
+END 
+BEGIN 3:rx_intf:fast__2:work
+    mcrs_pad_i :  1:top:fast:work
+    mrxdv_pad_i :  1:top:fast:work
+    mcoll_pad_i :  1:top:fast:work
+    mrxerr_pad_i :  1:top:fast:work
+    mrxd_pad_i :  1:top:fast:work
+    mrx_clk_pad_i :  1:top:fast:work
 END 
 BEGIN 3:tx_intf:fast__1:work
     mtxd_pad_o :  1:list_svh_unit:fast:work
     mtx_clk_pad_i :  1:list_svh_unit:fast:work
     mtxen_pad_o :  1:list_svh_unit:fast:work
-END 
-BEGIN 3:proc_intf:fast__2:work
-    wb_stb_i :  1:top:fast:work
-    wb_err_o :  1:top:fast:work
-    wb_dat_o :  1:top:fast:work
-    wb_adr_i :  1:top:fast:work
-    wb_sel_i :  1:top:fast:work
-    wb_we_i :  1:top:fast:work
-    wb_cyc_i :  1:top:fast:work
-    int_o :  1:top:fast:work 1:list_svh_unit:fast:work
-    wb_ack_o :  1:top:fast:work
-    wb_dat_i :  1:top:fast:work
-    wb_rst_i :  1:top:fast:work
-    wb_clk_i :  1:top:fast:work
-END 
-BEGIN 3:rx_intf:fast__2:work
-    mcoll_pad_i :  1:top:fast:work
-    mrxerr_pad_i :  1:top:fast:work
-    mrxd_pad_i :  1:top:fast:work
-    mrx_clk_pad_i :  1:top:fast:work
-    mcrs_pad_i :  1:top:fast:work
-    mrxdv_pad_i :  1:top:fast:work
 END 

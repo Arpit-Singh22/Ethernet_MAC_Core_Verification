@@ -1,0 +1,19 @@
+# set testname proc_reg_read_test
+# proc_reg_read_test
+#  do run_test.do
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 15:17:21 on Nov 19,2025
+# vlog list.svh "+incdir+C:/uvm-1.2/src" "+define+ETH_WISHBONE_B3" 
+# ** Error: (vlog-7) Failed to open design unit file "list.svh" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 15:17:21 on Nov 19,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/questasim64_2024.1/win64/vlog failed.
+# Error in macro ./run_test.do line 4
+# C:/questasim64_2024.1/win64/vlog failed.
+#     while executing
+# "vlog list.svh +incdir+C:/uvm-1.2/src +define+ETH_WISHBONE_B3"
+# 
+
+# 
+# <EOF>

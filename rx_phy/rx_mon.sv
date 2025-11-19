@@ -30,9 +30,9 @@ class rx_mon extends uvm_monitor;
 						byteQ.push_back(byteVar);
 					end
 					frame = new("frame");
-					{>>{frame.preamble, frame.sof, frame.payload, frame.crc}} = byteQ;
-					$display("printing frame from rx mon");
-					frame.print();
+					{>>byte{frame.preamble, frame.sof, frame.payload, frame.crc}} = byteQ;
+					//$display("printing frame from rx mon");
+					//frame.print();
 					ap_port.write(frame);
 					nibbleQ.delete();
 					byteQ.delete();

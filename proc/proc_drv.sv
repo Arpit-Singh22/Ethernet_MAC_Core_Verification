@@ -4,7 +4,8 @@ class proc_drv extends uvm_driver#(wb_tx);
 	`NEW_COMP
 
 	function void build_phase(uvm_phase phase);
-		uvm_config_db#(virtual proc_intf)::get(this, "","vif", vif);
+		if(!uvm_config_db#(virtual proc_intf)::get(this, "","vif", vif))
+			`uvm_error("INTFERR", "inteface handle error in proc_driver")
 	endfunction
 
 	task run_phase(uvm_phase phase);

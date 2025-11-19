@@ -4,7 +4,8 @@ class rx_drv extends uvm_driver#(eth_frame);
 	`NEW_COMP
 
 	function void build_phase(uvm_phase phase);
-		uvm_config_db#(virtual rx_intf)::get(this, "","vif", vif);
+		if(!uvm_config_db#(virtual rx_intf)::get(this, "","vif", vif))
+			`uvm_error("INTFERR", "inteface handle error in rx_driver")
 	endfunction
 
 	task run_phase(uvm_phase phase);

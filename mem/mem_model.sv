@@ -28,10 +28,10 @@ class mem_model extends uvm_component;
 					mem[vif.slave_cb.m_wb_adr_o+3] = vif.slave_cb.m_wb_dat_o[31:24];
 				end
 				else begin
-					vif.slave_cb.m_wb_dat_i[7:0]   = mem[vif.slave_cb.m_wb_adr_o ];  
-					vif.slave_cb.m_wb_dat_i[15:8]  = mem[vif.slave_cb.m_wb_adr_o+1]; 
-					vif.slave_cb.m_wb_dat_i[23:16] = mem[vif.slave_cb.m_wb_adr_o+2];
-					vif.slave_cb.m_wb_dat_i[31:24] = mem[vif.slave_cb.m_wb_adr_o+3];
+					vif.slave_cb.m_wb_dat_i[7:0]   <= mem[vif.slave_cb.m_wb_adr_o ];  
+					vif.slave_cb.m_wb_dat_i[15:8]  <= mem[vif.slave_cb.m_wb_adr_o+1]; 
+					vif.slave_cb.m_wb_dat_i[23:16] <= mem[vif.slave_cb.m_wb_adr_o+2];
+					vif.slave_cb.m_wb_dat_i[31:24] <= mem[vif.slave_cb.m_wb_adr_o+3];
 				end
 				@(vif.slave_cb);
 				vif.slave_cb.m_wb_ack_i <= 0;
