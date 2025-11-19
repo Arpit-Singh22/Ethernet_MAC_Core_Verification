@@ -20,8 +20,8 @@ class mem_mon extends uvm_monitor;
 				tx.data = vif.m_wb_we_o ? vif.m_wb_dat_o : vif.m_wb_dat_i;
 				tx.wr_rd = vif.m_wb_we_o;
 				tx.sel = vif.m_wb_sel_o;
-				$display("Printing mem mon fields");
-				tx.print();
+				//$display("Printing mem mon fields");
+				//tx.print();
 				ap_port.write(tx);
 			end
 		end

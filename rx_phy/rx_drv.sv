@@ -27,6 +27,7 @@ class rx_drv extends uvm_driver#(eth_frame);
 			nibbleQ[2*i+1] = nibble_l;
 		end
 		//drive nibbleQ to the design on RX INTF
+		
 		foreach(nibbleQ[i]) begin
 			@(posedge vif.mrx_clk_pad_i);
 			vif.mrxd_pad_i = nibbleQ[i];
@@ -36,7 +37,11 @@ class rx_drv extends uvm_driver#(eth_frame);
 			vif.mcrs_pad_i = 0;
 		end
 		@(posedge vif.mrx_clk_pad_i);
-			vif.mrxd_pad_i = 0;
-			vif.mrxdv_pad_i = 0;
+		vif.mrxd_pad_i = 0;
+		vif.mrxdv_pad_i = 0;
+		vif.mrxerr_pad_i = 0;
+		vif.mcoll_pad_i = 0;
+		vif.mcrs_pad_i = 0;
+
 	endtask
 endclass
