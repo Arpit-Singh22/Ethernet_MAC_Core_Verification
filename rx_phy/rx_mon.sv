@@ -18,8 +18,8 @@ class rx_mon extends uvm_monitor;
 	task run_phase(uvm_phase phase);
 		bit start_collecting_frame_flag = 0;
 		forever begin
-			@(posedge vif.mrx_clk_pad_i);
-			if (vif.mrxdv_pad_i == 1) begin
+			@(vif.rx_mon_cb);
+			if (vif.rx_mon_cb.mrxdv_pad_i == 1) begin
 				start_collecting_frame_flag = 1;
 				nibbleQ.push_back(vif.mrxd_pad_i);
 			end
@@ -34,6 +34,8 @@ class rx_mon extends uvm_monitor;
 					$display("printing frame from rx mon");
 					frame.print();
 					ap_port.write(frame);
+					nibbleQ.delete();
+					byteQ.delete();
 					start_collecting_frame_flag = 0;
 				end
 			end
