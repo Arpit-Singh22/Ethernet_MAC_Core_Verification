@@ -16,5 +16,14 @@ int num_mismatches;
 `define INT_SRC  12'h1
 `define INT_MASK 12'h2
 `define FRAME_LENGTH 16'h100
+`define FD 1
+`define HD 0
+
+`ifdef PHY_MODE_100MBPS
+	`define PHY_CLK_TP 40
+`else
+	`define PHY_CLK_TP 400
+`endif
 
 typedef bit [3:0] nibble_t;
+

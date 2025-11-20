@@ -68,7 +68,7 @@ module top;
 	end
 	//wb_clk => 100Mhz -> 10ns
 	always #5 wb_clk = ~wb_clk;
-	always #5 phy_clk = ~phy_clk;
+	always #(`PHY_CLK_TP/2.0) phy_clk = ~phy_clk;
 
 	initial begin
 		//set reg_maskA
@@ -96,7 +96,7 @@ module top;
 		wb_clk = 0;
 		wb_rst = 1;
 		phy_clk = 0;
-		repeat(2) @(posedge wb_clk) wb_rst = 0;
+		repeat(4) @(posedge wb_clk) wb_rst = 0;
 	end
 	initial begin
 		//run_test("mac_base_test");
@@ -104,6 +104,9 @@ module top;
 		//run_test("proc_reg_write_read_test");
 		//run_test("mac_fd_tx_test");
 		//run_test("mac_fd_rx_test");
-		run_test("mac_tx_rx_test");
+		//run_test("mac_tx_rx_test");
+		//run_test("mac_hd_tx_test");
+		//run_test("mac_hd_rx_test");
+		run_test("mac_hd_tx_rx_test");
 	end
 endmodule
