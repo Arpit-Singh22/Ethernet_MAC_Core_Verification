@@ -36,15 +36,10 @@ class proc_reg_read_test extends mac_base_test;
 
 	task run_phase(uvm_phase phase); 
 		proc_reg_read_seq seq = new("seq"); 
-		//proc_isr_seq isr_seq = new("isr_seq"); 
 		phase.raise_objection(this);	
 		super.run_phase(phase); 
 		phase.phase_done.set_drain_time(this,1000);	
 		seq.start(env.proc_agent_i.sqr); 
-		//fork	
-		//	isr_seq.start(env.proc_agent_i.sqr);	
-		//join_none	
-		//@(negedge top.proc_pif.int_o); 
 		phase.drop_objection(this);	
 	endtask 
 endclass
@@ -60,15 +55,10 @@ class proc_reg_write_read_test extends mac_base_test;
 
 	task run_phase(uvm_phase phase); 
 		proc_reg_write_read_seq seq = new("seq"); 
-		//proc_isr_seq isr_seq = new("isr_seq"); 
 		phase.raise_objection(this);	
 		super.run_phase(phase); 
 		phase.phase_done.set_drain_time(this,1000);	
 		seq.start(env.proc_agent_i.sqr); 
-		//fork	
-		//	isr_seq.start(env.proc_agent_i.sqr);	
-		//join_none	
-		//@(negedge top.proc_pif.int_o); 
 		phase.drop_objection(this);	
 	endtask 
 endclass
@@ -228,3 +218,23 @@ class mac_hd_tx_rx_test extends mac_base_test;
 		phase.drop_objection(this);	
 	endtask 
 endclass
+
+class proc_reg_read_rm_test extends mac_base_test; 
+	`uvm_component_utils(proc_reg_read_rm_test) 
+	`NEW_COMP 	
+	
+	function void build_phase(uvm_phase phase);
+		super.build_phase(phase);
+		exp_match_count = 21;
+	endfunction
+
+	task run_phase(uvm_phase phase); 
+		proc_reg_read_rm_seq seq = new("seq"); 
+		phase.raise_objection(this);	
+		super.run_phase(phase); 
+		phase.phase_done.set_drain_time(this,1000);	
+		seq.start(env.proc_agent_i.sqr); 
+		phase.drop_objection(this);	
+	endtask 
+endclass
+

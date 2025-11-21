@@ -107,6 +107,7 @@ module top;
 		//run_test("mac_tx_rx_test");
 		//run_test("mac_hd_tx_test");
 		//run_test("mac_hd_rx_test");
-		run_test("mac_hd_tx_rx_test");
+		//run_test("mac_hd_tx_rx_test");
+		run_test("proc_reg_read_rm_test");
 	end
 endmodule

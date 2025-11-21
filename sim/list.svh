@@ -11,8 +11,14 @@ import uvm_pkg::*;
 `include "../rx_phy/rx_phy_intf.sv"
 `include "../miim/miim_intf.sv"
 
+
 `include "../proc/proc_tx.sv"
+//reg model
+`include "../sbd/mac_reg_model.sv"
+`include "../sbd/wb_adapter.sv"
+
 `include "../proc/proc_seq_lib.sv"
+`include "../proc/proc_seq_rm_lib.sv"
 `include "../proc/proc_sqr.sv"
 `include "../proc/proc_drv.sv"
 `include "../proc/proc_agent.sv"

@@ -1,4 +1,6 @@
-work/
-questa_uvm.bat
-*.*swp
 sim/*
+!sim/list.svh
+!sim/run.do
+!sim/wave.do
+!sim/transcript
+!sim/*.log
