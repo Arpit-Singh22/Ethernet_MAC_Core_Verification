@@ -26,12 +26,11 @@ class proc_drv extends uvm_driver#(wb_tx);
 		vif.drv_cb.wb_cyc_i <= 1'b1;
 
 		wait (vif.drv_cb.wb_ack_o == 1'b1);
+		if(tx.wr_rd == 0 ) tx.data = vif.drv_cb.wb_dat_o;
 
 		@(vif.drv_cb);
 		vif.drv_cb.wb_adr_i <= 0; 
-		if (tx.wr_rd == 1) vif.drv_cb.wb_dat_i <= 0;
-		else tx.data = vif.drv_cb.wb_dat_o;
-		vif.drv_cb.wb_we_i  <= 0;
+		vif.drv_cb.wb_dat_i <= 0;
 		vif.drv_cb.wb_sel_i <= 0; 
 		vif.drv_cb.wb_stb_i <= 0; 
 		vif.drv_cb.wb_cyc_i <= 0; 
