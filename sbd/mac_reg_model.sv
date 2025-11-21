@@ -43,7 +43,7 @@ function new(string name = "moder_reg");
    super.new(name, 17, build_coverage(UVM_CVR_FIELD_VALS));
    if(has_coverage(UVM_CVR_FIELD_VALS)) begin
      moder_cg = new;
-     set_coverage(UVM_CVR_FIELD_VALS);
+     void'(set_coverage(UVM_CVR_FIELD_VALS));
    end
 endfunction
 
@@ -191,7 +191,7 @@ function new(string name = "intmask_reg");
    super.new(name, 7, build_coverage(UVM_CVR_FIELD_VALS));
    if(has_coverage(UVM_CVR_FIELD_VALS)) begin
      intmask_cg = new;
-     set_coverage(UVM_CVR_FIELD_VALS);
+     void'(set_coverage(UVM_CVR_FIELD_VALS));
    end
 endfunction
 

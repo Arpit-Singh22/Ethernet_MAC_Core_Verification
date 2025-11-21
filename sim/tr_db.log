@@ -101,3 +101,17 @@
   CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env.proc_agent_i.sqr STREAM:1042}
   CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env.proc_agent_i.sqr STREAM:1042}
   CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env.proc_agent_i.sqr STREAM:1042}
+  CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env.proc_agent_i.sqr STREAM:1042}
+  CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env.proc_agent_i.sqr STREAM:1042}
+  CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env.proc_agent_i.sqr STREAM:1042}
+  CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env.proc_agent_i.sqr STREAM:1042}
+  CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env.proc_agent_i.sqr STREAM:1042}
+  CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env.proc_agent_i.sqr STREAM:1042}
+  CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env.proc_agent_i.sqr STREAM:1042}
+  CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env.proc_agent_i.sqr STREAM:1042}
+  CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env.proc_agent_i.sqr STREAM:1042}
+  CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env.proc_agent_i.sqr STREAM:1042}
+  CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env.proc_agent_i.sqr STREAM:1042}
+  CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env.proc_agent_i.sqr STREAM:1042}
+  CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env.proc_agent_i.sqr STREAM:1042}
+  CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env.proc_agent_i.sqr STREAM:1042}

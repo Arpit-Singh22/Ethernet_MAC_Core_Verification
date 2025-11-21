@@ -23,11 +23,12 @@ class mac_sbd extends uvm_scoreboard;
 		imp_rx = new("imp_rx", this);
 		FH = $fopen("compare.log","w");
 		FH_2 = $fopen("mem_wr_data.log","w");
-		FH_3 = $fopen("rx_payloadQ.log","w");
+		FH_3 = $fopen("mem_rd_data.log","w");
 	endfunction
 	
 	function void write_mem(wb_tx t);
 		if (t.wr_rd == 0) begin
+			$fdisplay(FH_3, "mem_rd_data=%0h", t.data);
 			mem_rd_dataQ.push_back(t.data[31:24]);
 			mem_rd_dataQ.push_back(t.data[23:16]);
 			mem_rd_dataQ.push_back(t.data[15:8]);
@@ -70,7 +71,6 @@ class mac_sbd extends uvm_scoreboard;
 				else begin
 					num_mismatches++;
 				end
-				$fdisplay(FH, "frame_rcvd_data=%0h, mem_wr_data=%0h", rx_phy_data, mem_wr_data);
 			end
 		end
 	endtask
