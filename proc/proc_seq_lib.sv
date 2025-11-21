@@ -1,8 +1,34 @@
 class proc_base_seq extends uvm_sequence#(wb_tx);
 	uvm_phase phase;
+	mac_reg_block reg_block;
 	`uvm_object_utils(proc_base_seq)
 	`NEW_OBJ
 
+	task pre_body();
+		uvm_resource_db#(mac_reg_block)::read_by_name("GLOBAL", "MAC_RM", reg_block, this);
+	endtask
+
+endclass
+
+class proc_isr_seq extends proc_base_seq;
+	`uvm_object_utils(proc_isr_seq)
+	`NEW_OBJ
+	bit [31:0] data_t;
+
+		//whenever processor agent gets interrupt
+		//it should check, what is causing the interrupt (what is the reason)
+		//among 7 (7 bits in interrupt source register)
+		//take approriate action
+		//drop the interrupt and also clear the interrupt in INT_SRC regs
+	task body();
+		forever begin
+		@(posedge top.proc_pif.int_o);
+		`uvm_do_with(req, {req.addr == `INT_SRC; req.wr_rd == 1'b0;})
+		data_t = req.data;
+		#20;
+		`uvm_do_with(req, {req.addr == `INT_SRC; req.wr_rd == 1'b1; req.data==data_t;})
+		end
+	endtask
 endclass
 
 class proc_reg_read_seq extends proc_base_seq;
@@ -32,26 +58,6 @@ class proc_reg_write_read_seq extends proc_base_seq;
 	endtask
 endclass
 
-class proc_isr_seq extends proc_base_seq;
-	`uvm_object_utils(proc_isr_seq)
-	`NEW_OBJ
-	bit [31:0] data_t;
-
-		//whenever processor agent gets interrupt
-		//it should check, what is causing the interrupt (what is the reason)
-		//among 7 (7 bits in interrupt source register)
-		//take approriate action
-		//drop the interrupt and also clear the interrupt in INT_SRC regs
-	task body();
-		forever begin
-		@(posedge top.proc_pif.int_o);
-		`uvm_do_with(req, {req.addr == `INT_SRC; req.wr_rd == 1'b0;})
-		data_t = req.data;
-		#20;
-		`uvm_do_with(req, {req.addr == `INT_SRC; req.wr_rd == 1'b1; req.data==data_t;})
-		end
-	endtask
-endclass
 
 class mac_tx_seq extends proc_base_seq;
 	bit [31:0] data_t;
