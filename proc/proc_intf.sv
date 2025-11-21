@@ -12,7 +12,7 @@ interface proc_intf(input wb_clk_i, wb_rst_i);
 	bit			int_o;
 
 	clocking drv_cb@(posedge wb_clk_i);
-		default input #1 output #0;
+		default input #0 output #0;
 		input wb_dat_o, wb_err_o, wb_ack_o, int_o;
 		output wb_dat_i, wb_adr_i, wb_sel_i, wb_stb_i, wb_we_i, wb_cyc_i;
 	endclocking
