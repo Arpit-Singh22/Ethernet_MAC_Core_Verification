@@ -26,4 +26,7 @@ int num_mismatches;
 `endif
 
 typedef bit [3:0] nibble_t;
-
+typedef enum bit {
+	FD = 0,
+	BD = 1
+} access_type_t;

@@ -5,7 +5,7 @@ class mac_sbd extends uvm_scoreboard;
 	uvm_analysis_imp_mem#(wb_tx, mac_sbd) imp_mem;
 	uvm_analysis_imp_tx#(eth_frame, mac_sbd) imp_tx;
 	uvm_analysis_imp_rx#(eth_frame, mac_sbd) imp_rx;
-
+	mac_reg_block reg_block;
 	`uvm_component_utils(mac_sbd)
 	`NEW_COMP
 
@@ -16,8 +16,11 @@ class mac_sbd extends uvm_scoreboard;
 	int FH, FH_2,FH_3;
 	bit [7:0] mem_wr_dataQ[$];
 	bit [7:0] mem_wr_data;
+	uvm_status_e status;
 
 	function void build_phase(uvm_phase phase);
+		super.build_phase(phase);
+		uvm_resource_db#(mac_reg_block)::read_by_name("GLOBAL", "MAC_RM", reg_block, this);
 		imp_mem = new("imp_mem", this);
 		imp_tx = new("imp_tx", this);
 		imp_rx = new("imp_rx", this);
@@ -45,6 +48,8 @@ class mac_sbd extends uvm_scoreboard;
 
 	function void write_tx(eth_frame t);
 		bit [7:0] tx_phy_data, mem_read_data;
+		//reg_block.intsrc.set(7'h01);	//since, frame tx is over, we should expect int_src=01
+		//reg_block.intsrc.mirror(status, UVM_CHECK); //it gets value from DUT to mirror
 		foreach (t.payload[i]) begin
 			tx_phy_data = t.payload[i];
 			mem_read_data = mem_rd_dataQ.pop_front();

@@ -257,3 +257,22 @@ class proc_reg_write_read_rm_test extends mac_base_test;
 	endtask 
 endclass
 
+class proc_reg_write_read_rm_bd_test extends mac_base_test; 
+	`uvm_component_utils(proc_reg_write_read_rm_bd_test) 
+	`NEW_COMP 	
+	
+	function void build_phase(uvm_phase phase);
+		super.build_phase(phase);
+		exp_match_count = 21;
+	endfunction
+
+	task run_phase(uvm_phase phase); 
+		proc_reg_write_read_rm_seq seq = new("seq"); 
+		phase.raise_objection(this);	
+		super.run_phase(phase); 
+		phase.phase_done.set_drain_time(this,1000);	
+		seq.access_type = BD;
+		seq.start(env.proc_agent_i.sqr); 
+		phase.drop_objection(this);	
+	endtask 
+endclass

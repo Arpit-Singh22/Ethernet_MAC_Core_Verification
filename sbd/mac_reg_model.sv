@@ -793,7 +793,7 @@ wb_map.add_reg(hash1, 32'h13, "RW");
 wb_map.add_reg(txctrl, 32'h14, "RW");
 
 //HDL path in register model is used for back door access of registers
-add_hdl_path("top_tb.dut.ethreg1", "RTL");
+add_hdl_path("top.dut.ethreg1", "RTL");
 
 //Lock is done to ensure we can't change the register configuration after this
 lock_model();

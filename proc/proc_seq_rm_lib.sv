@@ -1,7 +1,4 @@
 class proc_reg_read_rm_seq extends proc_base_seq;
-	uvm_reg regQ[$];
-	uvm_reg_data_t dut_data, rm_data;
-	uvm_status_e status;
 
 	`uvm_object_utils(proc_reg_read_seq)
 	`NEW_OBJ
@@ -25,10 +22,6 @@ class proc_reg_read_rm_seq extends proc_base_seq;
 endclass
 
 class proc_reg_write_read_rm_seq extends proc_base_seq;
-	uvm_reg regQ[$];
-	uvm_reg_data_t dut_data, rm_data, miicommand_wr_data;
-	uvm_status_e status;
-	string reg_name;
 	rand bit [31:0] data_t;
 	`uvm_object_utils(proc_reg_write_read_rm_seq)
 	`NEW_OBJ
@@ -45,7 +38,11 @@ class proc_reg_write_read_rm_seq extends proc_base_seq;
 			if (reg_name == "txbdnum") begin
 				data_t = $urandom_range(0, 'h80);
 			end
-			regQ[i].write(status, data_t);
+
+			if (reg_name == "collconf") data_t = data_t & 32'h000F_003F;
+			if (reg_name == "miiaddress") data_t = data_t & {19'h0, 5'h1F, 3'h0, 5'h1F};
+			if (access_type == FD) regQ[i].write(status, data_t);
+			else regQ[i].poke(status, data_t);	//back door write
 		end
 
 		regQ.shuffle();
@@ -58,7 +55,8 @@ class proc_reg_write_read_rm_seq extends proc_base_seq;
 			end
 
 			rm_data = regQ[i].get();
-			regQ[i].read(status, dut_data);
+			if (access_type == FD) regQ[i].read(status, dut_data);
+			else regQ[i].peek(status, dut_data);	//back door read
 			if(rm_data != dut_data) begin
 				`uvm_error("REG_TEST_SQ",$sformatf("get/read: Read error for %s: Expected: %0h Acutal: %0h",regQ[i].get_name(), rm_data, dut_data))
 				num_mismatches++;

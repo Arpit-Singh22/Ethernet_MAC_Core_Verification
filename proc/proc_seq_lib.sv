@@ -1,6 +1,11 @@
 class proc_base_seq extends uvm_sequence#(wb_tx);
 	uvm_phase phase;
 	mac_reg_block reg_block;
+	uvm_reg regQ[$];
+	uvm_reg_data_t dut_data, rm_data, miicommand_wr_data;
+	uvm_status_e status;
+	string reg_name;
+	access_type_t access_type;
 	`uvm_object_utils(proc_base_seq)
 	`NEW_OBJ
 
@@ -26,7 +31,8 @@ class proc_isr_seq extends proc_base_seq;
 		`uvm_do_with(req, {req.addr == `INT_SRC; req.wr_rd == 1'b0;})
 		data_t = req.data;
 		#20;
-		`uvm_do_with(req, {req.addr == `INT_SRC; req.wr_rd == 1'b1; req.data==data_t;})
+		//`uvm_do_with(req, {req.addr == `INT_SRC; req.wr_rd == 1'b1; req.data==data_t;})
+		reg_block.intsrc.read(status, data_t);
 		end
 	endtask
 endclass
@@ -76,7 +82,8 @@ class mac_tx_seq extends proc_base_seq;
 		`uvm_do_with(req, {req.addr == 12'h100; req.data == data_t; req.wr_rd == 1'b1; })
 
 		//INT_MASK: enable all interrupt generation
-		`uvm_do_with(req, {req.addr == `INT_MASK; req.data == 7'h7F; req.wr_rd == 1'b1; })
+		//`uvm_do_with(req, {req.addr == `INT_MASK; req.data == 7'h7F; req.wr_rd == 1'b1; })
+		reg_block.intmask.write(status, 7'h7F);
 
 		//MODER
 		data_t 			= $random;
@@ -88,7 +95,8 @@ class mac_tx_seq extends proc_base_seq;
 		data_t[2]		= 1'b0;
 		data_t[1]		= 1'b1;	//Tx En =1
 		data_t[0]		= 1'b0;	//Rx En =0
-		`uvm_do_with(req, {req.addr == `MODER; req.data == data_t; req.wr_rd == 1'b1; })
+		//`uvm_do_with(req, {req.addr == `MODER; req.data == data_t; req.wr_rd == 1'b1; })
+		reg_block.moder.write(status, data_t);
 	endtask
 endclass
 
@@ -111,7 +119,8 @@ class mac_rx_seq extends proc_base_seq;
 		`uvm_do_with(req, {req.addr == 12'h600>>2; req.data == data_t; req.wr_rd == 1'b1; })
 
 		//INT_MASK: enable all interrupt generation
-		`uvm_do_with(req, {req.addr == `INT_MASK; req.data == 7'h7F; req.wr_rd == 1'b1; })
+		//`uvm_do_with(req, {req.addr == `INT_MASK; req.data == 7'h7F; req.wr_rd == 1'b1; })
+		reg_block.intmask.write(status, 7'h7F);
 
 		//MODER
 		data_t 			= $random;
@@ -123,7 +132,8 @@ class mac_rx_seq extends proc_base_seq;
 		data_t[2]		= 1'b0;
 		data_t[1]		= 1'b0;	//Tx En =0
 		data_t[0]		= 1'b1;	//Rx En =1
-		`uvm_do_with(req, {req.addr == `MODER; req.data == data_t; req.wr_rd == 1'b1; })
+		//`uvm_do_with(req, {req.addr == `MODER; req.data == data_t; req.wr_rd == 1'b1; })
+		reg_block.moder.write(status, data_t);
 	endtask
 endclass
 
@@ -152,7 +162,8 @@ class mac_tx_rx_seq extends proc_base_seq;
 		`uvm_do_with(req, {req.addr == 12'h600>>2; req.data == data_t; req.wr_rd == 1'b1; })
 
 		//INT_MASK: enable all interrupt generation
-		`uvm_do_with(req, {req.addr == `INT_MASK; req.data == 7'h7F; req.wr_rd == 1'b1; })
+		//`uvm_do_with(req, {req.addr == `INT_MASK; req.data == 7'h7F; req.wr_rd == 1'b1; })
+		reg_block.intmask.write(status, 7'h7F);
 
 		//MODER
 		data_t 			= $random;
@@ -164,6 +175,7 @@ class mac_tx_rx_seq extends proc_base_seq;
 		data_t[2]		= 1'b0;
 		data_t[1]		= 1'b1;	//Tx En =1
 		data_t[0]		= 1'b1;	//Rx En =1
-		`uvm_do_with(req, {req.addr == `MODER; req.data == data_t; req.wr_rd == 1'b1; })
+		//`uvm_do_with(req, {req.addr == `MODER; req.data == data_t; req.wr_rd == 1'b1; })
+		reg_block.moder.write(status, data_t);
 	endtask
 endclass
