@@ -20,8 +20,4 @@ class eth_frame extends uvm_sequence_item;
 		soft preamble == 56'h55_5555_5555_5555;
 		soft sof == 8'hd5;
 	}
-
-	function void post_randomize();
-		crc = 32'h1234_5678;
-	endfunction
 endclass

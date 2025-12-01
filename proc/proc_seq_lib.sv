@@ -32,7 +32,7 @@ class proc_isr_seq extends proc_base_seq;
 		data_t = req.data;
 		#20;
 		//`uvm_do_with(req, {req.addr == `INT_SRC; req.wr_rd == 1'b1; req.data==data_t;})
-		reg_block.intsrc.read(status, data_t);
+		reg_block.intsrc.write(status, data_t);
 		end
 	endtask
 endclass

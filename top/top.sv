@@ -102,14 +102,14 @@ module top;
 		//run_test("mac_base_test");
 		//run_test("proc_reg_read_test");
 		//run_test("proc_reg_write_read_test");
-		//run_test("mac_fd_tx_test");
-		//run_test("mac_fd_rx_test");
+		//run_test("mac_tx_test");
+		run_test("mac_rx_test");
 		//run_test("mac_tx_rx_test");
 		//run_test("mac_hd_tx_test");
 		//run_test("mac_hd_rx_test");
 		//run_test("mac_hd_tx_rx_test");
 		//run_test("proc_reg_read_rm_test");
 		//run_test("proc_reg_write_read_rm_test");
-		run_test("proc_reg_write_read_rm_bd_test");
+		//run_test("proc_reg_write_read_rm_bd_test");
 	end
 endmodule

@@ -51,7 +51,7 @@ class proc_reg_write_read_rm_seq extends proc_base_seq;
 				rm_data = reg_block.miistatus.get();
 				rm_data[2] = 1;
 				rm_data[1] = 1;
-				reg_block.miistatus.predict(rm_data);
+				//reg_block.miistatus.predict(rm_data);
 			end
 
 			rm_data = regQ[i].get();
