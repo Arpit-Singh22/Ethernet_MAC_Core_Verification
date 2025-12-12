@@ -1,0 +1,10 @@
+
+vlog C:/Users/arpit/OneDrive/Desktop/Project/ETHERNET_MAC_VERIFICATION/sim/list.svh +incdir+C:/uvm-1.2/src +define+ETH_WISHBONE_B3 +define+PHY_MODE_100MBPS
+vopt work.top +cover=fcbest -o mac_tx_test -assertdebug
+
+vsim -c -coverage -assertdebug mac_tx_test \
+-sv_lib C:/questasim64_2024.1/uvm-1.2/win64/uvm_dpi \
++UVM_TESTNAME=mac_tx_test
+coverage save -onexit MAC_TX_TEST.ucdb
+run -all
+quit

@@ -21,6 +21,8 @@ import uvm_pkg::*;
 `include "../proc/proc_seq_rm_lib.sv"
 `include "../proc/proc_sqr.sv"
 `include "../proc/proc_drv.sv"
+`include "../proc/proc_mon.sv"
+`include "../proc/proc_cov.sv"
 `include "../proc/proc_agent.sv"
 
 `include "../mem/mem_model.sv"

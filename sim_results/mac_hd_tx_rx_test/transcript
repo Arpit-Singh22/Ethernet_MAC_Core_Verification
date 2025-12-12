@@ -1,0 +1,274 @@
+# do run.do
+# QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 16:22:13 on Dec 12,2025
+# vlog C:/Users/arpit/OneDrive/Desktop/Project/ETHERNET_MAC_VERIFICATION/sim/list.svh "+incdir+C:/uvm-1.2/src" "+define+ETH_WISHBONE_B3" "+define+PHY_MODE_100MBPS" 
+# -- Compiling package uvm_pkg
+# -- Compiling package list_svh_unit
+# -- Importing package uvm_pkg
+# -- Compiling module eth_clockgen
+# -- Compiling module eth_cop
+# -- Compiling module eth_crc
+# -- Compiling module eth_fifo
+# -- Compiling module eth_maccontrol
+# -- Compiling module eth_macstatus
+# -- Compiling module eth_miim
+# -- Compiling module eth_outputcontrol
+# -- Compiling module eth_random
+# -- Compiling module eth_receivecontrol
+# -- Compiling module eth_register
+# -- Compiling module eth_registers
+# -- Compiling module eth_rxaddrcheck
+# -- Compiling module eth_rxcounters
+# -- Compiling module eth_rxethmac
+# -- Compiling module eth_rxstatem
+# -- Compiling module eth_shiftreg
+# -- Compiling module eth_spram_256x32
+# -- Compiling module eth_top
+# -- Compiling module eth_transmitcontrol
+# -- Compiling module eth_txcounters
+# -- Compiling module eth_txethmac
+# -- Compiling module eth_txstatem
+# -- Compiling module eth_wishbone
+# -- Compiling module ethmac
+# -- Compiling interface proc_intf
+# -- Compiling interface mem_intf
+# -- Compiling interface tx_intf
+# -- Compiling interface rx_intf
+# -- Compiling interface miim_intf
+# -- Compiling module top
+# 
+# Top level modules:
+# 	eth_cop
+# 	eth_top
+# 	top
+# End time: 16:22:14 on Dec 12,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# QuestaSim-64 vopt 2024.1 Compiler 2024.02 Feb  1 2024
+# Start time: 16:22:14 on Dec 12,2025
+# vopt work.top "+cover=fcbest" -o mac_hd_tx_rx_test -assertdebug 
+# 
+# Top level modules:
+# 	top
+# Support of the MGLS_LICENSE_FILE and LM_LICENSE_FILE licensing environment variables will be discontinued starting with the 2025.1 release. Please update to using the SALT_LICENSE_SERVER variable.
+# Please contact Siemens EDA Customer Support (https://support.sw.siemens.com/) for assistance.
+# 
+# Analyzing design...
+# -- Loading module top
+# -- Loading interface proc_intf
+# -- Loading interface mem_intf
+# -- Loading interface tx_intf
+# -- Loading interface rx_intf
+# -- Loading interface miim_intf
+# -- Loading module ethmac
+# -- Loading module eth_miim
+# -- Loading module eth_clockgen
+# -- Loading module eth_shiftreg
+# -- Loading module eth_outputcontrol
+# -- Loading module eth_registers
+# -- Loading module eth_register
+# -- Loading module eth_maccontrol
+# -- Loading module eth_receivecontrol
+# -- Loading module eth_transmitcontrol
+# -- Loading module eth_txethmac
+# -- Loading module eth_txcounters
+# -- Loading module eth_txstatem
+# -- Loading module eth_crc
+# -- Loading module eth_random
+# -- Loading module eth_rxethmac
+# -- Loading module eth_rxstatem
+# -- Loading module eth_rxcounters
+# -- Loading module eth_rxaddrcheck
+# -- Loading module eth_wishbone
+# -- Loading module eth_spram_256x32
+# -- Loading module eth_fifo
+# -- Loading module eth_macstatus
+# ** Warning: (vopt-13408) Code coverage will be disabled for some DUs/packages/classes and source files.
+# Optimizing 50 design-units (inlining 71/72 module instances):
+# -- Optimizing package uvm_pkg(fast)
+# -- Optimizing package list_svh_unit(fast)
+# -- Inlining interface proc_intf(fast__2)
+# -- Inlining interface mem_intf(fast__2)
+# -- Inlining interface tx_intf(fast__2)
+# -- Inlining interface rx_intf(fast__2)
+# -- Inlining interface miim_intf(fast__1)
+# -- Inlining module eth_clockgen(fast)
+# -- Inlining module eth_shiftreg(fast)
+# -- Inlining module eth_outputcontrol(fast)
+# -- Inlining module eth_miim(fast)
+# -- Inlining module eth_register(fast)
+# -- Inlining module eth_register(fast__1)
+# -- Inlining module eth_register(fast__2)
+# -- Inlining module eth_register(fast__3)
+# -- Inlining module eth_register(fast__4)
+# -- Inlining module eth_register(fast__5)
+# -- Inlining module eth_register(fast__6)
+# -- Inlining module eth_register(fast__7)
+# -- Inlining module eth_register(fast__8)
+# -- Inlining module eth_register(fast__9)
+# -- Inlining module eth_register(fast__10)
+# -- Inlining module eth_register(fast__11)
+# -- Inlining module eth_register(fast__12)
+# -- Inlining module eth_register(fast__13)
+# -- Inlining module eth_register(fast__14)
+# -- Inlining module eth_registers(fast)
+# -- Inlining module eth_receivecontrol(fast)
+# -- Inlining module eth_transmitcontrol(fast)
+# -- Inlining module eth_maccontrol(fast)
+# -- Inlining module eth_txcounters(fast)
+# -- Inlining module eth_txstatem(fast)
+# -- Inlining module eth_crc(fast)
+# -- Inlining module eth_random(fast)
+# -- Inlining module eth_txethmac(fast)
+# -- Inlining module eth_rxstatem(fast)
+# -- Inlining module eth_rxcounters(fast)
+# -- Inlining module eth_rxaddrcheck(fast)
+# -- Inlining module eth_rxethmac(fast)
+# -- Inlining module eth_spram_256x32(fast)
+# -- Inlining module eth_fifo(fast)
+# -- Inlining module eth_wishbone(fast)
+# -- Inlining module eth_macstatus(fast)
+# -- Inlining module ethmac(fast)
+# -- Optimizing module top(fast)
+# -- Optimizing interface tx_intf(fast)
+# -- Optimizing interface mem_intf(fast)
+# -- Optimizing interface proc_intf(fast)
+# -- Optimizing interface rx_intf(fast)
+# -- Optimizing interface miim_intf(fast)
+# Optimized design name is mac_hd_tx_rx_test
+# End time: 16:22:15 on Dec 12,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
+# vsim -c -coverage -assertdebug mac_hd_tx_rx_test -sv_lib C:/questasim64_2024.1/uvm-1.2/win64/uvm_dpi "+UVM_TESTNAME=mac_hd_tx_rx_test" 
+# Start time: 16:22:15 on Dec 12,2025
+# Loading C:/Users/arpit/AppData/Local/Temp\arpit@JEDI_dpi_44144\win64_gcc-15.2.0\export_tramp.dll
+# //  Questa Sim-64
+# //  Version 2024.1 win64 Feb  1 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Loading sv_std.std
+# Loading work.proc_intf(fast)
+# Loading work.mem_intf(fast)
+# Loading work.tx_intf(fast)
+# Loading work.rx_intf(fast)
+# Loading work.miim_intf(fast)
+# Loading work.uvm_pkg(fast)
+# Loading work.list_svh_unit(fast)
+# Loading work.top(fast)
+# ** Warning: (vsim-3764) Stand-alone call to function 'read_by_name' treated as implicit void cast.
+#    Time: 0 ns  Iteration: 0  Region: /list_svh_unit File: C:/Users/arpit/OneDrive/Desktop/Project/ETHERNET_MAC_VERIFICATION/sim/../sbd/mac_sbd.sv Line: 23
+# ** Warning: (vsim-3764) Stand-alone call to function 'get' treated as implicit void cast.
+#    Time: 0 ns  Iteration: 0  Region: /list_svh_unit File: C:/Users/arpit/OneDrive/Desktop/Project/ETHERNET_MAC_VERIFICATION/sim/../proc/proc_mon.sv Line: 10
+# ** Warning: (vsim-3764) Stand-alone call to function 'read_by_name' treated as implicit void cast.
+#    Time: 0 ns  Iteration: 0  Region: /list_svh_unit::proc_base_seq File: C:/Users/arpit/OneDrive/Desktop/Project/ETHERNET_MAC_VERIFICATION/sim/../proc/proc_seq_lib.sv Line: 13
+# Compiling C:/Users/arpit/AppData/Local/Temp\arpit@JEDI_dpi_44144\win64_gcc-15.2.0\exportwrapper.c
+# Loading C:/Users/arpit/AppData/Local/Temp\arpit@JEDI_dpi_44144\win64_gcc-15.2.0\vsim_auto_compile.dll
+# Loading C:/questasim64_2024.1/uvm-1.2/win64/uvm_dpi.dll
+# UVM_INFO C:/uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
+# ----------------------------------------------------------------
+# UVM-1.2
+# (C) 2007-2014 Mentor Graphics Corporation
+# (C) 2007-2014 Cadence Design Systems, Inc.
+# (C) 2006-2014 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# (C) 2013-2014 NVIDIA Corporation
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO @ 0: reporter [RNTST] Running test mac_hd_tx_rx_test...
+# UVM_INFO C:/uvm-1.2/src/base/uvm_spell_chkr.svh(123) @ 0: reporter [UVM/CONFIGDB/SPELLCHK] include_coverage not located, did you mean vif
+# UVM_INFO C:/uvm-1.2/src/base/uvm_spell_chkr.svh(123) @ 0: reporter [UVM/CONFIGDB/SPELLCHK] include_coverage not located, did you mean vif
+# UVM_INFO C:/uvm-1.2/src/base/uvm_spell_chkr.svh(123) @ 0: reporter [UVM/CONFIGDB/SPELLCHK] include_coverage not located, did you mean vif
+# UVM_INFO C:/uvm-1.2/src/base/uvm_root.svh(579) @ 0: reporter [UVMTOP] UVM testbench topology:
+# --------------------------------------------------------------
+# Name                       Type                    Size  Value
+# --------------------------------------------------------------
+# uvm_test_top               mac_hd_tx_rx_test       -     @356 
+#   env                      mac_env                 -     @369 
+#     mac_sbd_i              mac_sbd                 -     @423 
+#       imp_mem              uvm_analysis_imp_mem    -     @578 
+#       imp_rx               uvm_analysis_imp_rx     -     @598 
+#       imp_tx               uvm_analysis_imp_tx     -     @588 
+#     mem_agent_i            mem_agent               -     @414 
+#       mem_model_i          mem_model               -     @608 
+#       mon                  mem_mon                 -     @617 
+#         ap_port            uvm_analysis_port       -     @627 
+#     miim_agent_i           miim_agent              -     @405 
+#     proc_agent_i           proc_agent              -     @378 
+#       cov                  proc_cov                -     @814 
+#         analysis_imp       uvm_analysis_imp        -     @823 
+#       drv                  proc_drv                -     @639 
+#         rsp_port           uvm_analysis_port       -     @658 
+#         seq_item_port      uvm_seq_item_pull_port  -     @648 
+#       mon                  proc_mon                -     @805 
+#         ap_port            uvm_analysis_port       -     @835 
+#       sqr                  uvm_sequencer           -     @668 
+#         rsp_export         uvm_analysis_export     -     @677 
+#         seq_item_export    uvm_seq_item_pull_imp   -     @795 
+#         arbitration_queue  array                   0     -    
+#         lock_queue         array                   0     -    
+#         num_last_reqs      integral                32    'd1  
+#         num_last_rsps      integral                32    'd1  
+#     rx_agent_i             rx_agent                -     @396 
+#       drv                  rx_drv                  -     @850 
+#         rsp_port           uvm_analysis_port       -     @869 
+#         seq_item_port      uvm_seq_item_pull_port  -     @859 
+#       mon                  rx_mon                  -     @1016
+#         ap_port            uvm_analysis_port       -     @1026
+#       sqr                  uvm_sequencer           -     @879 
+#         rsp_export         uvm_analysis_export     -     @888 
+#         seq_item_export    uvm_seq_item_pull_imp   -     @1006
+#         arbitration_queue  array                   0     -    
+#         lock_queue         array                   0     -    
+#         num_last_reqs      integral                32    'd1  
+#         num_last_rsps      integral                32    'd1  
+#     tx_agent_i             tx_agent                -     @387 
+#       mon                  tx_mon                  -     @1042
+#         ap_port            uvm_analysis_port       -     @1051
+# --------------------------------------------------------------
+# 
+# UVM_INFO C:/uvm-1.2/src/base/uvm_objection.svh(1270) @ 23525: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO C:/Users/arpit/OneDrive/Desktop/Project/ETHERNET_MAC_VERIFICATION/sim/../top/test_lib.sv(24) @ 23525: uvm_test_top [STATUS] mac_hd_tx_rx_test TEST PASSING
+# UVM_INFO C:/uvm-1.2/src/base/uvm_report_server.svh(847) @ 23525: reporter [UVM/REPORT/SERVER] 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    8
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [RNTST]     1
+# [STATUS]     1
+# [TEST_DONE]     1
+# [UVM/CONFIGDB/SPELLCHK]     3
+# [UVM/RELNOTES]     1
+# [UVMTOP]     1
+# 
+# ** Note: $finish    : C:/uvm-1.2/src/base/uvm_root.svh(517)
+#    Time: 23525 ns  Iteration: 67  Instance: /top
+# Saving coverage database on exit...
+# End time: 16:22:17 on Dec 12,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 3
